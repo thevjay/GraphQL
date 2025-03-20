@@ -17,6 +17,10 @@ app.use('/graphql',graphqlHTTP({
     graphiql: process.env.NODE_ENV === 'development',
 }))
 
+app.use('/',(req,res)=>{
+    res.send("Server running Successfully")
+})
+
 connectDB()
     .then((conn)=>{
         console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold)
